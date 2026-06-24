@@ -1,10 +1,8 @@
 <div align="center">
 
-<a href="https://myclaw.ai" target="_blank" rel="noopener">
-  <img src="banner.svg" alt="skill-evolution-spec — MyClaw.ai" width="100%"/>
-</a>
+<img src="banner.svg" alt="skill-evolution-spec" width="100%"/>
 
-<br/>
+# skill-evolution-spec
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 [![MyClaw.ai](https://img.shields.io/badge/Powered%20by-MyClaw.ai-6366f1)](https://myclaw.ai)
@@ -12,6 +10,10 @@
 [![Status](https://img.shields.io/badge/Status-Production--Ready-22c55e)]()
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](CONTRIBUTING.md)
 [![Spec Version](https://img.shields.io/badge/Spec-v1.0-blue)]()
+
+**Give your agent real self-evolution — not prompt tricks, engineering.**
+
+A complete specification for a skill evolution system, validated on OpenClaw and ready to implement on any agent runtime.
 
 **Languages:** [English](README.md) · [中文](README.zh-CN.md) · [日本語](README.ja.md) · [한국어](README.ko.md) · [Français](README.fr.md) · [Deutsch](README.de.md) · [Español](README.es.md) · [Русский](README.ru.md)
 
