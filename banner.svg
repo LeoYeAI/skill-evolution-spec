@@ -9,120 +9,81 @@
       <stop offset="0%" stop-color="#6366f1"/>
       <stop offset="100%" stop-color="#a855f7"/>
     </linearGradient>
-    <linearGradient id="paint2" x1="209" y1="144" x2="366" y2="605" gradientUnits="userSpaceOnUse">
+    <linearGradient id="g2" x1="209" y1="144" x2="366" y2="605" gradientUnits="userSpaceOnUse">
       <stop stop-color="#FF6E65"/><stop offset="1" stop-color="#C52D26"/>
     </linearGradient>
-    <linearGradient id="paint3" x1="44" y1="255" x2="113" y2="423" gradientUnits="userSpaceOnUse">
+    <linearGradient id="g3" x1="44" y1="255" x2="113" y2="423" gradientUnits="userSpaceOnUse">
       <stop stop-color="#FF6E65"/><stop offset="1" stop-color="#C52D26"/>
     </linearGradient>
-    <linearGradient id="paint4" x1="572" y1="255" x2="642" y2="423" gradientUnits="userSpaceOnUse">
+    <linearGradient id="g4" x1="572" y1="255" x2="642" y2="423" gradientUnits="userSpaceOnUse">
       <stop stop-color="#FF6E65"/><stop offset="1" stop-color="#C52D26"/>
     </linearGradient>
     <filter id="glow">
-      <feGaussianBlur stdDeviation="2" result="blur"/>
-      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+      <feGaussianBlur stdDeviation="2" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
     </filter>
-    <!-- clip: ensure nothing bleeds outside banner -->
-    <clipPath id="bounds"><rect width="800" height="200" rx="12"/></clipPath>
+    <clipPath id="clip"><rect width="800" height="200" rx="12"/></clipPath>
   </defs>
 
-  <g clip-path="url(#bounds)">
-    <!-- background -->
+  <g clip-path="url(#clip)">
     <rect width="800" height="200" fill="url(#bg)"/>
-    
-    <!-- ambient glow -->
-    <ellipse cx="400" cy="100" rx="320" ry="80" fill="#6366f1" opacity="0.06"/>
-    
-    <!-- top accent bar -->
     <rect width="800" height="3" fill="url(#accent)"/>
 
-    <!-- ===== LEFT: logo only (no text inside) ===== -->
-    <!-- Scaled 0.13x — logo glyph only, clean and compact -->
-    <g transform="translate(0,0) scale(0.13)" clip-path="url(#logoClip)">
-      <!-- ambient glow behind logo -->
-      <ellipse cx="354" cy="370" rx="230" ry="200" fill="#FF6E65" opacity="0.18"/>
-      <!-- main oval body -->
-      <path d="M637.123 381.135C637.123 537.296 510.46 590.875 354.214 590.875C197.969 590.875 71.3066 537.296 71.3066 381.135C71.3066 306.144 101.113 234.224 154.169 181.197C207.224 128.17 279.183 98.3799 354.214 98.3799C429.246 98.3799 501.205 128.17 554.261 181.197C607.317 234.224 637.123 306.144 637.123 381.135Z" fill="url(#paint2)"/>
-      <!-- left wing -->
-      <path d="M113.728 331.458L179.725 291.913C170.78 272.617 155.565 256.915 136.554 247.363C117.544 237.81 95.8583 234.968 75.0271 239.301C54.1959 243.635 35.4455 254.887 21.8274 271.227C8.2092 287.567 0.525104 308.032 0.0259464 329.292C-0.473211 350.553 6.24238 371.357 19.0787 388.318C31.915 405.278 50.1164 417.397 70.7213 422.702C91.3262 428.007 113.122 426.187 132.559 417.536C151.997 408.885 167.932 393.913 177.772 375.057L113.728 331.458Z" fill="url(#paint3)"/>
-      <!-- right wing -->
-      <path d="M594.627 331.458L528.631 291.913C537.576 272.617 552.791 256.915 571.801 247.363C590.811 237.81 612.497 234.968 633.328 239.301C654.16 243.635 672.91 254.887 686.528 271.227C700.146 287.567 707.83 308.032 708.33 329.292C708.829 350.553 702.113 371.357 689.277 388.318C676.441 405.278 658.239 417.397 637.634 422.702C617.029 428.007 595.235 426.187 575.797 417.536C556.36 408.885 540.424 393.913 530.583 375.057L594.627 331.458Z" fill="url(#paint4)"/>
-      <!-- left white oval -->
+    <!-- === LEFT COLUMN: logo graphic only (eye mark, 110px wide) === -->
+    <!-- 
+      Original eye mark bounding box: x=0..708, y=0..678
+      Scale: 110/708 = 0.155
+      Translate: logo origin (0,0) stays at x=0
+    -->
+    <g transform="translate(0,18) scale(0.155)">
+      <ellipse cx="354" cy="370" rx="220" ry="190" fill="#FF6E65" opacity="0.20"/>
+      <path d="M637.123 381.135C637.123 537.296 510.46 590.875 354.214 590.875C197.969 590.875 71.3066 537.296 71.3066 381.135C71.3066 306.144 101.113 234.224 154.169 181.197C207.224 128.17 279.183 98.3799 354.214 98.3799C429.246 98.3799 501.205 128.17 554.261 181.197C607.317 234.224 637.123 306.144 637.123 381.135Z" fill="url(#g2)"/>
+      <path d="M113.728 331.458L179.725 291.913C170.78 272.617 155.565 256.915 136.554 247.363C117.544 237.81 95.8583 234.968 75.0271 239.301C54.1959 243.635 35.4455 254.887 21.8274 271.227C8.2092 287.567 0.525104 308.032 0.0259464 329.292C-0.473211 350.553 6.24238 371.357 19.0787 388.318C31.915 405.278 50.1164 417.397 70.7213 422.702C91.3262 428.007 113.122 426.187 132.559 417.536C151.997 408.885 167.932 393.913 177.772 375.057L113.728 331.458Z" fill="url(#g3)"/>
+      <path d="M594.627 331.458L528.631 291.913C537.576 272.617 552.791 256.915 571.801 247.363C590.811 237.81 612.497 234.968 633.328 239.301C654.16 243.635 672.91 254.887 686.528 271.227C700.146 287.567 707.83 308.032 708.33 329.292C708.829 350.553 702.113 371.357 689.277 388.318C676.441 405.278 658.239 417.397 637.634 422.702C617.029 428.007 595.235 426.187 575.797 417.536C556.36 408.885 540.424 393.913 530.583 375.057L594.627 331.458Z" fill="url(#g4)"/>
       <path d="M273.827 374.13C305.645 374.13 331.439 338.267 331.439 294.028C331.439 249.788 305.645 213.925 273.827 213.925C242.009 213.925 216.215 249.788 216.215 294.028C216.215 338.267 242.009 374.13 273.827 374.13Z" fill="white"/>
-      <!-- left pupil -->
       <path d="M275.665 350.091C299.452 350.091 318.734 326.779 318.734 298.021C318.734 269.263 299.452 245.95 275.665 245.95C251.879 245.95 232.596 269.263 232.596 298.021C232.596 326.779 251.879 350.091 275.665 350.091Z" fill="#0D1B0D"/>
       <ellipse cx="305" cy="285" rx="9" ry="9" fill="#FF786E"/>
-      <!-- right white oval -->
       <path d="M435.317 374.13C467.136 374.13 492.929 338.267 492.929 294.028C492.929 249.788 467.136 213.925 435.317 213.925C403.499 213.925 377.705 249.788 377.705 294.028C377.705 338.267 403.499 374.13 435.317 374.13Z" fill="white"/>
-      <!-- right pupil -->
       <path d="M448.422 341.468C445.097 341.446 441.891 340.225 439.392 338.032L402.076 304.97C400.437 303.529 399.172 301.714 398.389 299.678C397.605 297.642 397.328 295.446 397.579 293.279C397.83 291.112 398.604 289.039 399.832 287.237C401.061 285.434 402.708 283.955 404.633 282.928L441.87 262.482C445.049 260.756 448.783 260.362 452.252 261.388C455.721 262.414 458.64 264.776 460.368 267.953C462.095 271.13 462.488 274.863 461.462 278.33C460.435 281.797 458.073 284.715 454.894 286.441L434.518 297.623L457.371 317.909C458.709 319.088 459.802 320.518 460.587 322.12C461.372 323.722 461.832 325.462 461.944 327.242C462.055 329.022 461.815 330.808 461.236 332.495C460.657 334.182 459.751 335.738 458.57 337.075C457.269 338.462 455.697 339.568 453.951 340.323C452.206 341.079 450.324 341.468 448.422 341.468Z" fill="#0D1B0D"/>
       <ellipse cx="467" cy="282" rx="9" ry="9" fill="#FF786E"/>
-      <!-- orange dot -->
       <circle cx="305" cy="312" r="13" fill="#FF786E"/>
       <circle cx="305" cy="312" r="5" fill="white" opacity="0.8"/>
     </g>
 
-    <!-- ===== MyClaw.ai brand text (BESIDE logo, not inside) ===== -->
-    <!-- Placed to the right of the logo mark, vertically centered -->
-    <text x="130" y="102"
-          font-family="'Segoe UI',Arial,sans-serif"
-          font-size="15" font-weight="700" fill="white" opacity="0.88">
-      MyClaw.ai
-    </text>
-    <text x="130" y="118"
-          font-family="'Segoe UI',Arial,sans-serif"
-          font-size="9" fill="#a5b4fc" opacity="0.7">
-      OpenClaw Agent Platform
-    </text>
+    <!-- === LEFT COLUMN: MyClaw.ai text (beside logo, not inside it) === -->
+    <text x="118" y="88" font-family="'Segoe UI',Arial,sans-serif" font-size="16" font-weight="700" fill="white" opacity="0.90">MyClaw.ai</text>
+    <text x="118" y="104" font-family="'Segoe UI',Arial,sans-serif" font-size="9.5" fill="#a5b4fc" opacity="0.70">Agent Platform</text>
 
-    <!-- vertical divider -->
-    <rect x="225" y="30" width="1" height="140" fill="url(#accent)" opacity="0.25"/>
+    <!-- === VERTICAL DIVIDER === -->
+    <rect x="210" y="28" width="1" height="144" fill="url(#accent)" opacity="0.22"/>
 
-    <!-- ===== RIGHT: title + content ===== -->
-    <!-- Main title — split into two lines so it never overflows -->
-    <text x="242" y="65"
-          font-family="'Segoe UI',system-ui,-apple-system,sans-serif"
-          font-size="22" font-weight="700" fill="#ffffff"
-          filter="url(#glow)">
-      skill-evolution-spec
-    </text>
-    <!-- accent underline -->
-    <rect x="242" y="72" width="300" height="1.5" fill="url(#accent)" rx="1" opacity="0.65"/>
-    <!-- subtitle -->
-    <text x="242" y="92"
-          font-family="'Segoe UI',system-ui,sans-serif"
-          font-size="11" fill="#a5b4fc" opacity="0.85">
-      Give your agent real self-evolution
-    </text>
-    <text x="242" y="107"
-          font-family="'Segoe UI',system-ui,sans-serif"
-          font-size="11" fill="#a5b4fc" opacity="0.85">
-      — not prompt tricks, engineering.
-    </text>
+    <!-- === RIGHT COLUMN: title + content === -->
+    <text x="228" y="72" font-family="'Segoe UI',system-ui,-apple-system,sans-serif" font-size="22" font-weight="700" fill="#ffffff" filter="url(#glow)">skill-evolution-spec</text>
+    <rect x="228" y="77" width="290" height="1.5" fill="url(#accent)" rx="1" opacity="0.6"/>
+    <text x="228" y="96" font-family="'Segoe UI',system-ui,sans-serif" font-size="11" fill="#a5b4fc" opacity="0.82">Give your agent real self-evolution</text>
+    <text x="228" y="111" font-family="'Segoe UI',system-ui,sans-serif" font-size="11" fill="#a5b4fc" opacity="0.82">— not prompt tricks, engineering.</text>
 
-    <!-- pill tags: row 1 -->
-    <rect x="242" y="116" width="88" height="18" rx="9" fill="#6366f1" opacity="0.18"/>
-    <text x="286" y="128" font-family="sans-serif" font-size="9" fill="#a5b4fc" text-anchor="middle">⚡ Skill Memory</text>
+    <!-- pill tags row 1 -->
+    <rect x="228" y="120" width="87" height="18" rx="9" fill="#6366f1" opacity="0.18"/>
+    <text x="271" y="132" font-family="sans-serif" font-size="9" fill="#a5b4fc" text-anchor="middle">⚡ Skill Memory</text>
 
-    <rect x="338" y="116" width="115" height="18" rx="9" fill="#7c3aed" opacity="0.18"/>
-    <text x="396" y="128" font-family="sans-serif" font-size="9" fill="#c4b5fd" text-anchor="middle">🧠 Lifecycle Curator</text>
+    <rect x="322" y="120" width="112" height="18" rx="9" fill="#7c3aed" opacity="0.18"/>
+    <text x="378" y="132" font-family="sans-serif" font-size="9" fill="#c4b5fd" text-anchor="middle">🧠 Lifecycle Curator</text>
 
-    <rect x="461" y="116" width="90" height="18" rx="9" fill="#4f46e5" opacity="0.18"/>
-    <text x="506" y="128" font-family="sans-serif" font-size="9" fill="#a5b4fc" text-anchor="middle">🔁 Self-Evolving</text>
+    <rect x="441" y="120" width="87" height="18" rx="9" fill="#4f46e5" opacity="0.18"/>
+    <text x="485" y="132" font-family="sans-serif" font-size="9" fill="#a5b4fc" text-anchor="middle">🔁 Self-Evolving</text>
 
-    <!-- pill tags: row 2 -->
-    <rect x="242" y="141" width="130" height="18" rx="9" fill="#FF786E" opacity="0.10"/>
-    <text x="307" y="153" font-family="sans-serif" font-size="9" fill="#ff9a8b" text-anchor="middle">✨ Built on OpenClaw</text>
+    <!-- pill tags row 2 -->
+    <rect x="228" y="145" width="120" height="18" rx="9" fill="#FF786E" opacity="0.10"/>
+    <text x="288" y="157" font-family="sans-serif" font-size="9" fill="#ff9a8b" text-anchor="middle">✨ Built on OpenClaw</text>
 
-    <rect x="380" y="141" width="100" height="18" rx="9" fill="#6366f1" opacity="0.13"/>
-    <text x="430" y="153" font-family="sans-serif" font-size="9" fill="#a5b4fc" text-anchor="middle">📋 MIT License</text>
+    <rect x="356" y="145" width="82" height="18" rx="9" fill="#6366f1" opacity="0.13"/>
+    <text x="397" y="157" font-family="sans-serif" font-size="9" fill="#a5b4fc" text-anchor="middle">📋 MIT</text>
 
-    <!-- bottom decorative line -->
-    <rect x="30" y="182" width="740" height="0.5" fill="#ffffff" opacity="0.05"/>
+    <!-- bottom line -->
+    <rect x="28" y="185" width="744" height="0.5" fill="#ffffff" opacity="0.05"/>
 
-    <!-- bottom-right: version badge -->
-    <text x="770" y="192" font-family="sans-serif" font-size="9" fill="#6366f1" text-anchor="end" opacity="0.6">
-      v1.0
-    </text>
+    <!-- top-right version -->
+    <text x="790" y="190" font-family="sans-serif" font-size="9" fill="#6366f1" text-anchor="end" opacity="0.6">v1.0</text>
   </g>
 </svg>
