@@ -1,10 +1,15 @@
 # skill-evolution-spec
 
-**让 Agent 拥有真正的自进化能力——不是 Prompt 技巧，是工程。**
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+[![MyClaw.ai](https://img.shields.io/badge/Powered%20by-MyClaw.ai-6366f1?logo=data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48Y2lyY2xlIGN4PSIxMiIgY3k9IjEyIiByPSIxMiIgZmlsbD0iIzYzNjZmMSIvPjwvc3ZnPg==)](https://myclaw.ai)
+[![OpenClaw](https://img.shields.io/badge/Runtime-OpenClaw-0ea5e9)](https://myclaw.ai)
+[![Status](https://img.shields.io/badge/Status-Production--Ready-22c55e)]()
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](CONTRIBUTING.md)
+[![Spec Version](https://img.shields.io/badge/Spec-v1.0-blue)]()
 
-这是一套完整的技能自进化系统规格，逆向自 Hermes Agent 生产实现，在 OpenClaw 上验证可用。
+**Give your agent real self-evolution — not prompt tricks, engineering.**
 
-[中文文档](README.zh-CN.md)
+A complete specification for a skill evolution system, validated on OpenClaw and ready to implement on any agent runtime.
 
 ---
 
@@ -103,7 +108,7 @@ active ──(stale_after_days)──> stale ──(archive_after_days)──> a
 
 Never deletes. Worst case: `archived`. Always recoverable.
 
-**Defaults (from production):**
+**Defaults:**
 ```yaml
 curator:
   enabled: true
@@ -139,7 +144,7 @@ Every skill gets a record:
 
 Three bump events:
 - `skill_view` → `bump_view`
-- skill actually adopted/executed → `bump_use`  
+- skill actually adopted/executed → `bump_use`
 - `skill_manage patch/edit` → `bump_patch`
 
 ---
@@ -174,7 +179,7 @@ skill_manage(action='patch'). Don't wait to be asked.
 - [ ] 4. Tools: `skill_view` / `skill_manage` / `skills_list`, all atomic writes
 - [ ] 5. Telemetry sidecar `.usage.json` + three bump events (view/use/patch)
 - [ ] 6. System prompt discipline (§6 snippet)
-- [ ] 7. Curator: idle trigger + state machine + defaults (§5.3) + tar.gz backup + never-delete
+- [ ] 7. Curator: idle trigger + state machine + defaults + tar.gz backup + never-delete
 - [ ] 8. pin/unpin exemption logic
 - [ ] 9. CLI verbs: status / run / pause / resume / pin / unpin / archive / restore / prune / backup / rollback
 
@@ -192,7 +197,20 @@ skill_manage(action='patch'). Don't wait to be asked.
 
 ## Full Spec
 
-See [SPEC.md](SPEC.md) for the complete implementation spec with all code samples, state machines, and default values reverse-engineered from production.
+See [SPEC.md](SPEC.md) for the complete implementation spec with all data schemas, state machines, tool interfaces, and default values.
+
+---
+
+## Built with MyClaw.ai
+
+[![MyClaw.ai — AI Agents that remember](https://img.shields.io/badge/MyClaw.ai-AI%20Agents%20that%20remember-6366f1?style=for-the-badge)](https://myclaw.ai)
+
+This spec was developed and validated as part of the [MyClaw.ai](https://myclaw.ai) agent platform — the only platform where your agent remembers across every session, channel, and device.
+
+**MyClaw.ai** gives agents persistent memory, cross-session goal pursuit, and self-evolving skill libraries — out of the box, no engineering required.
+
+- [myclaw.ai](https://myclaw.ai) — Try it
+- [OpenClaw](https://myclaw.ai) — The open agent runtime this spec targets
 
 ---
 
