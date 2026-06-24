@@ -1,7 +1,11 @@
+<div align="center">
+
+<img src="banner.svg" alt="skill-evolution-spec" width="100%"/>
+
 # skill-evolution-spec
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
-[![MyClaw.ai](https://img.shields.io/badge/Powered%20by-MyClaw.ai-6366f1?logo=data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48Y2lyY2xlIGN4PSIxMiIgY3k9IjEyIiByPSIxMiIgZmlsbD0iIzYzNjZmMSIvPjwvc3ZnPg==)](https://myclaw.ai)
+[![MyClaw.ai](https://img.shields.io/badge/Powered%20by-MyClaw.ai-6366f1)](https://myclaw.ai)
 [![OpenClaw](https://img.shields.io/badge/Runtime-OpenClaw-0ea5e9)](https://myclaw.ai)
 [![Status](https://img.shields.io/badge/Status-Production--Ready-22c55e)]()
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](CONTRIBUTING.md)
@@ -11,9 +15,9 @@
 
 A complete specification for a skill evolution system, validated on OpenClaw and ready to implement on any agent runtime.
 
----
-
 **Languages:** [English](README.md) · [中文](README.zh-CN.md) · [日本語](README.ja.md) · [한국어](README.ko.md) · [Français](README.fr.md) · [Deutsch](README.de.md) · [Español](README.es.md) · [Русский](README.ru.md)
+
+</div>
 
 ---
 
