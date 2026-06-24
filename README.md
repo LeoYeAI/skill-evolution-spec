@@ -1,6 +1,8 @@
 <div align="center">
 
-<img src="banner.svg" alt="skill-evolution-spec" width="100%"/>
+<a href="https://myclaw.ai" target="_blank" rel="noopener">
+  <img src="banner.svg" alt="skill-evolution-spec — MyClaw.ai" width="100%"/>
+</a>
 
 <br/>
 
