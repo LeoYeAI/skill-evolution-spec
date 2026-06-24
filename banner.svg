@@ -9,140 +9,63 @@
       <stop offset="0%" style="stop-color:#6366f1"/>
       <stop offset="100%" style="stop-color:#a855f7"/>
     </linearGradient>
-    <!-- MyClaw logo gradients -->
-    <linearGradient id="paint2_logo" x1="209.215" y1="143.925" x2="366.215" y2="605.425" gradientUnits="userSpaceOnUse">
-      <stop stop-color="#FF6E65"/>
-      <stop offset="1" stop-color="#C52D26"/>
+    <linearGradient id="paint2" x1="209" y1="144" x2="366" y2="605" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FF6E65"/><stop offset="1" stop-color="#C52D26"/>
     </linearGradient>
-    <linearGradient id="paint3_logo" x1="43.8049" y1="254.744" x2="112.879" y2="423.378" gradientUnits="userSpaceOnUse">
-      <stop stop-color="#FF6E65"/>
-      <stop offset="1" stop-color="#C52D26"/>
+    <linearGradient id="paint3" x1="44" y1="255" x2="113" y2="423" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FF6E65"/><stop offset="1" stop-color="#C52D26"/>
     </linearGradient>
-    <linearGradient id="paint4_logo" x1="572.436" y1="254.744" x2="641.509" y2="423.378" gradientUnits="userSpaceOnUse">
-      <stop stop-color="#FF6E65"/>
-      <stop offset="1" stop-color="#C52D26"/>
+    <linearGradient id="paint4" x1="572" y1="255" x2="642" y2="423" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FF6E65"/><stop offset="1" stop-color="#C52D26"/>
     </linearGradient>
     <filter id="glow">
-      <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
-      <feMerge>
-        <feMergeNode in="coloredBlur"/>
-        <feMergeNode in="SourceGraphic"/>
-      </feMerge>
-    </filter>
-    <filter id="softglow">
-      <feGaussianBlur stdDeviation="6" result="coloredBlur"/>
-      <feMerge>
-        <feMergeNode in="coloredBlur"/>
-        <feMergeNode in="SourceGraphic"/>
-      </feMerge>
+      <feGaussianBlur stdDeviation="2.5" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
     </filter>
   </defs>
 
-  <!-- Background -->
   <rect width="800" height="200" fill="url(#bg)" rx="12"/>
+  <ellipse cx="400" cy="100" rx="300" ry="85" fill="#6366f1" opacity="0.07"/>
+  <rect width="800" height="3" fill="url(#accent)" rx="2"/>
 
-  <!-- Grid lines (subtle) -->
-  <g stroke="#ffffff06" stroke-width="1">
-    <line x1="0" y1="50" x2="800" y2="50"/>
-    <line x1="0" y1="100" x2="800" y2="100"/>
-    <line x1="0" y1="150" x2="800" y2="150"/>
-    <line x1="200" y1="0" x2="200" y2="200"/>
-    <line x1="400" y1="0" x2="400" y2="200"/>
-    <line x1="600" y1="0" x2="600" y2="200"/>
-  </g>
-
-  <!-- Ambient glow left -->
-  <circle cx="130" cy="100" r="90" fill="#6366f1" opacity="0.10"/>
-  <circle cx="130" cy="100" r="50" fill="#a855f7" opacity="0.08"/>
-
-  <!-- ======= LEFT: SPEC TITLE ======= -->
-  <g transform="translate(38, 0)">
-    <!-- Title -->
-    <text x="0" y="90"
-          font-family="'Segoe UI', system-ui, -apple-system, sans-serif"
-          font-size="30" font-weight="700" fill="#ffffff"
-          filter="url(#glow)">
-      skill-evolution-spec
-    </text>
-    <!-- Accent underline -->
-    <rect x="0" y="98" width="280" height="2" fill="url(#accent)" rx="1" opacity="0.9"/>
-    <!-- Subtitle -->
-    <text x="0" y="122"
-          font-family="'Segoe UI', system-ui, -apple-system, sans-serif"
-          font-size="12" fill="#a5b4fc" opacity="0.9">
-      Give your agent real self-evolution
-    </text>
-    <!-- Three pill tags -->
-    <g transform="translate(0, 136)">
-      <rect x="0" y="0" width="108" height="22" rx="11" fill="#6366f1" opacity="0.20"/>
-      <text x="54" y="15" font-family="sans-serif" font-size="10" fill="#a5b4fc" text-anchor="middle">⚡ Skill Memory</text>
-      <rect x="118" y="0" width="138" height="22" rx="11" fill="#7c3aed" opacity="0.20"/>
-      <text x="187" y="15" font-family="sans-serif" font-size="10" fill="#c4b5fd" text-anchor="middle">🧠 Lifecycle Curator</text>
-      <rect x="266" y="0" width="110" height="22" rx="11" fill="#4f46e5" opacity="0.20"/>
-      <text x="321" y="15" font-family="sans-serif" font-size="10" fill="#a5b4fc" text-anchor="middle">🔁 Self-Evolving</text>
-    </g>
-  </g>
-
-  <!-- ======= RIGHT: MyClaw LOGO ======= -->
-  <g transform="translate(565, 22) scale(0.16)">
-    <!-- Glow behind logo -->
-    <ellipse cx="354" cy="370" rx="290" ry="250" fill="#FF6E65" opacity="0.15" filter="url(#softglow)"/>
-
-    <!-- Main eye/oval body -->
-    <path d="M637.123 381.135C637.123 537.296 510.46 590.875 354.214 590.875C197.969 590.875 71.3066 537.296 71.3066 381.135C71.3066 306.144 101.113 234.224 154.169 181.197C207.224 128.17 279.183 98.3799 354.214 98.3799C429.246 98.3799 501.205 128.17 554.261 181.197C607.317 234.224 637.123 306.144 637.123 381.135Z"
-          fill="url(#paint2_logo)" opacity="0.95"/>
-
-    <!-- Left wing flare -->
-    <path d="M113.728 331.458L179.725 291.913C170.78 272.617 155.565 256.915 136.554 247.363C117.544 237.81 95.8583 234.968 75.0271 239.301C54.1959 243.635 35.4455 254.887 21.8274 271.227C8.2092 287.567 0.525104 308.032 0.0259464 329.292C-0.473211 350.553 6.24238 371.357 19.0787 388.318C31.915 405.278 50.1164 417.397 70.7213 422.702C91.3262 428.007 113.122 426.187 132.559 417.536C151.997 408.885 167.932 393.913 177.772 375.057L113.728 331.458Z"
-          fill="url(#paint3_logo)" opacity="0.9"/>
-
-    <!-- Right wing flare -->
-    <path d="M594.627 331.458L528.631 291.913C537.576 272.617 552.791 256.915 571.801 247.363C590.811 237.81 612.497 234.968 633.328 239.301C654.16 243.635 672.91 254.887 686.528 271.227C700.146 287.567 707.83 308.032 708.33 329.292C708.829 350.553 702.113 371.357 689.277 388.318C676.441 405.278 658.239 417.397 637.634 422.702C617.029 428.007 595.235 426.187 575.797 417.536C556.36 408.885 540.424 393.913 530.583 375.057L594.627 331.458Z"
-          fill="url(#paint4_logo)" opacity="0.9"/>
-
-    <!-- Inner white oval -->
-    <path d="M273.827 374.13C305.645 374.13 331.439 338.267 331.439 294.028C331.439 249.788 305.645 213.925 273.827 213.925C242.009 213.925 216.215 249.788 216.215 294.028C216.215 338.267 242.009 374.13 273.827 374.13Z"
-          fill="white" opacity="0.95"/>
-
-    <!-- Left black pupil -->
-    <path d="M275.665 350.091C299.452 350.091 318.734 326.779 318.734 298.021C318.734 269.263 299.452 245.95 275.665 245.95C251.879 245.95 232.596 269.263 232.596 298.021C232.596 326.779 251.879 350.091 275.665 350.091Z"
-          fill="#0D1B0D"/>
-
-    <!-- Left pupil highlight -->
-    <ellipse cx="305" cy="288" rx="10" ry="10" fill="#FF786E" opacity="0.9"/>
-
-    <!-- Right white oval -->
-    <path d="M435.317 374.13C467.136 374.13 492.929 338.267 492.929 294.028C492.929 249.788 467.136 213.925 435.317 213.925C403.499 213.925 377.705 249.788 377.705 294.028C377.705 338.267 403.499 374.13 435.317 374.13Z"
-          fill="white" opacity="0.95"/>
-
-    <!-- Right black pupil -->
-    <path d="M448.422 341.468C445.097 341.446 441.891 340.225 439.392 338.032L402.076 304.97C400.437 303.529 399.172 301.714 398.389 299.678C397.605 297.642 397.328 295.446 397.579 293.279C397.83 291.112 398.604 289.039 399.832 287.237C401.061 285.434 402.708 283.955 404.633 282.928L441.87 262.482C445.049 260.756 448.783 260.362 452.252 261.388C455.721 262.414 458.64 264.776 460.368 267.953C462.095 271.13 462.488 274.863 461.462 278.33C460.435 281.797 458.073 284.715 454.894 286.441L434.518 297.623L457.371 317.909C458.709 319.088 459.802 320.518 460.587 322.12C461.372 323.722 461.832 325.462 461.944 327.242C462.055 329.022 461.815 330.808 461.236 332.495C460.657 334.182 459.751 335.738 458.57 337.075C457.269 338.462 455.697 339.568 453.951 340.323C452.206 341.079 450.324 341.468 448.422 341.468Z"
-          fill="#0D1B0D"/>
-
-    <!-- Right pupil highlight -->
-    <ellipse cx="468" cy="285" rx="10" ry="10" fill="#FF786E" opacity="0.9"/>
-
-    <!-- Orange accent dots (from original logo) -->
-    <circle cx="305" cy="312" r="14" fill="#FF786E"/>
+  <!-- LEFT: MyClaw logo mark (compact) -->
+  <g transform="translate(32,35) scale(0.165)">
+    <ellipse cx="354" cy="370" rx="230" ry="195" fill="#FF6E65" opacity="0.14"/>
+    <path d="M637.123 381.135C637.123 537.296 510.46 590.875 354.214 590.875C197.969 590.875 71.3066 537.296 71.3066 381.135C71.3066 306.144 101.113 234.224 154.169 181.197C207.224 128.17 279.183 98.3799 354.214 98.3799C429.246 98.3799 501.205 128.17 554.261 181.197C607.317 234.224 637.123 306.144 637.123 381.135Z" fill="url(#paint2)"/>
+    <path d="M113.728 331.458L179.725 291.913C170.78 272.617 155.565 256.915 136.554 247.363C117.544 237.81 95.8583 234.968 75.0271 239.301C54.1959 243.635 35.4455 254.887 21.8274 271.227C8.2092 287.567 0.525104 308.032 0.0259464 329.292C-0.473211 350.553 6.24238 371.357 19.0787 388.318C31.915 405.278 50.1164 417.397 70.7213 422.702C91.3262 428.007 113.122 426.187 132.559 417.536C151.997 408.885 167.932 393.913 177.772 375.057L113.728 331.458Z" fill="url(#paint3)"/>
+    <path d="M594.627 331.458L528.631 291.913C537.576 272.617 552.791 256.915 571.801 247.363C590.811 237.81 612.497 234.968 633.328 239.301C654.16 243.635 672.91 254.887 686.528 271.227C700.146 287.567 707.83 308.032 708.33 329.292C708.829 350.553 702.113 371.357 689.277 388.318C676.441 405.278 658.239 417.397 637.634 422.702C617.029 428.007 595.235 426.187 575.797 417.536C556.36 408.885 540.424 393.913 530.583 375.057L594.627 331.458Z" fill="url(#paint4)"/>
+    <path d="M273.827 374.13C305.645 374.13 331.439 338.267 331.439 294.028C331.439 249.788 305.645 213.925 273.827 213.925C242.009 213.925 216.215 249.788 216.215 294.028C216.215 338.267 242.009 374.13 273.827 374.13Z" fill="white"/>
+    <path d="M275.665 350.091C299.452 350.091 318.734 326.779 318.734 298.021C318.734 269.263 299.452 245.95 275.665 245.95C251.879 245.95 232.596 269.263 232.596 298.021C232.596 326.779 251.879 350.091 275.665 350.091Z" fill="#0D1B0D"/>
+    <ellipse cx="305" cy="285" rx="9" ry="9" fill="#FF786E"/>
+    <path d="M435.317 374.13C467.136 374.13 492.929 338.267 492.929 294.028C492.929 249.788 467.136 213.925 435.317 213.925C403.499 213.925 377.705 249.788 377.705 294.028C377.705 338.267 403.499 374.13 435.317 374.13Z" fill="white"/>
+    <path d="M448.422 341.468C445.097 341.446 441.891 340.225 439.392 338.032L402.076 304.97C400.437 303.529 399.172 301.714 398.389 299.678C397.605 297.642 397.328 295.446 397.579 293.279C397.83 291.112 398.604 289.039 399.832 287.237C401.061 285.434 402.708 283.955 404.633 282.928L441.87 262.482C445.049 260.756 448.783 260.362 452.252 261.388C455.721 262.414 458.64 264.776 460.368 267.953C462.095 271.13 462.488 274.863 461.462 278.33C460.435 281.797 458.073 284.715 454.894 286.441L434.518 297.623L457.371 317.909C458.709 319.088 459.802 320.518 460.587 322.12C461.372 323.722 461.832 325.462 461.944 327.242C462.055 329.022 461.815 330.808 461.236 332.495C460.657 334.182 459.751 335.738 458.57 337.075C457.269 338.462 455.697 339.568 453.951 340.323C452.206 341.079 450.324 341.468 448.422 341.468Z" fill="#0D1B0D"/>
+    <ellipse cx="467" cy="282" rx="9" ry="9" fill="#FF786E"/>
+    <circle cx="305" cy="312" r="13" fill="#FF786E"/>
     <circle cx="305" cy="312" r="5" fill="white" opacity="0.8"/>
-
-    <!-- Claw marks (subtle lines) -->
-    <path d="M311.215 619.789V558.925H327.215V667.425C327.215 672.948 322.738 677.425 317.215 677.425H213.215C202.169 677.425 193.215 668.471 193.215 657.425V645.347C193.215 644.4 193.272 643.457 193.447 642.527C195.936 629.279 208.521 604.741 241.715 602.425C272.339 600.289 296.517 612.787 307.688 621.436C309.075 622.51 311.215 621.543 311.215 619.789Z"
-          fill="#FF6E65" opacity="0.5"/>
-    <path d="M398.215 619.789V558.925H382.215V667.425C382.215 672.948 386.692 677.425 392.215 677.425H496.215C507.261 677.425 516.215 668.471 516.215 657.425V645.347C516.215 644.4 516.158 643.457 515.983 642.527C513.494 629.279 500.909 604.741 467.715 602.425C437.091 600.289 412.913 612.787 401.742 621.436C400.355 622.51 398.215 621.543 398.215 619.789Z"
-          fill="#FF6E65" opacity="0.5"/>
-
-    <!-- "MyClaw.ai" text in logo -->
-    <text x="710" y="530" font-family="'Segoe UI', Arial, sans-serif" font-size="110" font-weight="700" fill="white" opacity="0.95">MyClaw</text>
-    <text x="710" y="618" font-family="'Segoe UI', Arial, sans-serif" font-size="55" font-weight="400" fill="white" opacity="0.70">.ai</text>
+    <!-- MyClaw text -->
+    <text x="710" y="530" font-family="'Segoe UI',Arial,sans-serif" font-size="110" font-weight="700" fill="white" opacity="0.9">MyClaw</text>
+    <text x="710" y="618" font-family="'Segoe UI',Arial,sans-serif" font-size="55" font-weight="400" fill="white" opacity="0.6">.ai</text>
   </g>
 
-  <!-- Top accent bar -->
-  <rect x="0" y="0" width="800" height="3" fill="url(#accent)" rx="2"/>
+  <!-- CENTER: Title -->
+  <text x="195" y="85" font-family="'Segoe UI',system-ui,-apple-system,sans-serif" font-size="24" font-weight="700" fill="#ffffff" filter="url(#glow)">skill-evolution-spec</text>
+  <rect x="195" y="91" width="360" height="1.5" fill="url(#accent)" rx="1" opacity="0.7"/>
+  <text x="195" y="113" font-family="'Segoe UI',system-ui,-apple-system,sans-serif" font-size="11" fill="#a5b4fc" opacity="0.85">Give your agent real self-evolution — not prompt tricks, engineering.</text>
 
-  <!-- "OpenClaw" label under logo -->
-  <text x="730" y="195" font-family="'Segoe UI', system-ui, sans-serif"
-        font-size="11" fill="#6366f1" text-anchor="middle" opacity="0.8">
-    Powered by OpenClaw
-  </text>
+  <!-- Pill tags row 1 -->
+  <rect x="195" y="122" width="100" height="19" rx="9.5" fill="#6366f1" opacity="0.18"/>
+  <text x="245" y="135" font-family="sans-serif" font-size="9" fill="#a5b4fc" text-anchor="middle">⚡ Skill Memory</text>
+  <rect x="303" y="122" width="124" height="19" rx="9.5" fill="#7c3aed" opacity="0.18"/>
+  <text x="365" y="135" font-family="sans-serif" font-size="9" fill="#c4b5fd" text-anchor="middle">🧠 Lifecycle Curator</text>
+  <rect x="435" y="122" width="100" height="19" rx="9.5" fill="#4f46e5" opacity="0.18"/>
+  <text x="485" y="135" font-family="sans-serif" font-size="9" fill="#a5b4fc" text-anchor="middle">🔁 Self-Evolving</text>
+
+  <!-- Pill tags row 2: branding -->
+  <rect x="195" y="148" width="200" height="19" rx="9.5" fill="#FF786E" opacity="0.12"/>
+  <text x="225" y="161" font-family="sans-serif" font-size="9" fill="#ff9a8b" text-anchor="middle">✨ Built with MyClaw.ai</text>
+  <rect x="403" y="148" width="105" height="19" rx="9.5" fill="#6366f1" opacity="0.14"/>
+  <text x="455" y="161" font-family="sans-serif" font-size="9" fill="#a5b4fc" text-anchor="middle">⚙️ OpenClaw</text>
+
+  <!-- Bottom decorative line -->
+  <rect x="38" y="180" width="724" height="0.5" fill="#ffffff" opacity="0.06"/>
 </svg>
