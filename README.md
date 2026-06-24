@@ -13,6 +13,10 @@ A complete specification for a skill evolution system, validated on OpenClaw and
 
 ---
 
+**Languages:** [English](README.md) · [中文](README.zh-CN.md) · [日本語](README.ja.md) · [한국어](README.ko.md) · [Français](README.fr.md) · [Deutsch](README.de.md) · [Español](README.es.md) · [Русский](README.ru.md)
+
+---
+
 ## What is this?
 
 Most AI agents are stateless tools. They forget everything after each session. This spec describes a **skill evolution system** that gives agents:

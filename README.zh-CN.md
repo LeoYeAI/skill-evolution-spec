@@ -1,8 +1,18 @@
-# 技能自进化系统 — OpenClaw 迁移实现规格
+# skill-evolution-spec
+
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+[![MyClaw.ai](https://img.shields.io/badge/Powered%20by-MyClaw.ai-6366f1)](https://myclaw.ai)
+[![OpenClaw](https://img.shields.io/badge/运行时-OpenClaw-0ea5e9)](https://myclaw.ai)
+[![Status](https://img.shields.io/badge/状态-生产可用-22c55e)]()
+[![PRs Welcome](https://img.shields.io/badge/PR-欢迎-brightgreen.svg)](CONTRIBUTING.md)
 
 **让 Agent 拥有真正的自进化能力——不是 Prompt 技巧，是工程。**
 
-这是一套完整的技能自进化系统规格，逆向自 Hermes Agent 生产实现，在 OpenClaw 上验证可用。
+一套完整的技能自进化系统规格，在 OpenClaw 上验证可用，可移植到任意 Agent 运行时。
+
+---
+
+**语言：** [English](README.md) · [中文](README.zh-CN.md) · [日本語](README.ja.md) · [한국어](README.ko.md) · [Français](README.fr.md) · [Deutsch](README.de.md) · [Español](README.es.md) · [Русский](README.ru.md)
 
 ---
 
@@ -52,13 +62,11 @@ $CLAW_HOME/skills/
 ```markdown
 ---
 name: deploy-netlify
-description: "一句话说清触发条件和用途，注入到上下文的就是这一行"
+description: "一句话说清触发条件和用途"
 version: 1.0.0
 created_by: agent
 tags: [deploy, netlify, static]
 ---
-
-# 技能标题
 
 ## 何时使用（触发条件）
 
@@ -66,13 +74,11 @@ tags: [deploy, netlify, static]
 1. 带确切命令的编号步骤
 
 ## 坑 / Pitfalls
-- 踩过的坑写在这里
 
 ## 验证
-- 怎么确认成功
 ```
 
-`created_by: agent` 字段是整个治理体系的地基。只有 agent 创建的技能才会被 Curator 触碰。内置和 hub 安装的技能永远豁免。
+`created_by: agent` 是整个治理体系的地基。只有 Agent 创建的技能才会被 Curator 触碰。内置和 hub 安装的技能永远豁免。
 
 ---
 
@@ -92,8 +98,6 @@ tags: [deploy, netlify, static]
 
 多数实现会省掉这步。不做，技能库 3 个月烂成垃圾堆。
 
-**触发方式：** 闲置触发，非守护进程。Agent 闲置超过 `min_idle_hours`，且距上次运行超过 `interval_hours`，才触发。
-
 **状态机：**
 ```
 active ──(stale_after_days 无活动)──> stale ──(archive_after_days 无活动)──> archived
@@ -101,7 +105,7 @@ active ──(stale_after_days 无活动)──> stale ──(archive_after_days
 
 永不删除。最狠到 `archived`，始终可恢复。
 
-**真实默认值（直接来自生产）：**
+**默认值：**
 ```yaml
 curator:
   enabled: true
@@ -113,33 +117,6 @@ curator:
     enabled: true           # 每次运行前 tar.gz 备份
 ```
 
-**治理范围：** 只对 `is_managed`（即 `created_by: agent`）的技能下手。内置和 hub 技能不参与。
-
----
-
-## 使用遥测（.usage.json）
-
-每个技能一条记录：
-
-```json
-{
-  "deploy-netlify": {
-    "created_by": "agent",
-    "use_count": 12,
-    "view_count": 30,
-    "patch_count": 2,
-    "last_used_at": "2026-06-20T10:00:00Z",
-    "state": "active",
-    "pinned": false
-  }
-}
-```
-
-三类埋点：
-- `skill_view` → `bump_view`
-- 技能被实际采用/执行 → `bump_use`
-- `skill_manage patch/edit` → `bump_patch`
-
 ---
 
 ## 实现检查清单
@@ -149,7 +126,7 @@ curator:
 - [ ] 3. 快照缓存（manifest = mtime_ns + size），冷启动复用
 - [ ] 4. 工具：`skill_view` / `skill_manage` / `skills_list`，全部原子写
 - [ ] 5. 遥测 sidecar `.usage.json` + 三类埋点（view/use/patch）
-- [ ] 6. 系统提示词触发纪律（规格 §6 片段）
+- [ ] 6. 系统提示词触发纪律
 - [ ] 7. Curator：闲置触发 + 状态机 + 默认值 + tar.gz 备份 + 永不删除
 - [ ] 8. pin/unpin 豁免逻辑
 - [ ] 9. CLI 动词：status / run / pause / resume / pin / unpin / archive / restore / prune / backup / rollback
@@ -158,7 +135,15 @@ curator:
 
 ## 完整规格
 
-见 [SPEC.md](SPEC.md)，含所有代码示例、状态机、逆向自生产实现的默认值。
+见 [SPEC.md](SPEC.md)，含所有数据结构、状态机、工具接口和默认值。
+
+---
+
+## 由 MyClaw.ai 驱动
+
+[![MyClaw.ai — 有记忆的 AI Agent](https://img.shields.io/badge/MyClaw.ai-有记忆的%20AI%20Agent-6366f1?style=for-the-badge)](https://myclaw.ai)
+
+本规格作为 [MyClaw.ai](https://myclaw.ai) Agent 平台的一部分开发并验证——唯一让你的 Agent 跨 session、跨渠道、跨设备保持记忆的平台。
 
 ---
 
